@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Juego</title>
+    <link href="css/estilos.css" rel="stylesheet">
+	<!-- MetisMenu CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/funciones.js"></script>
+</head>
+<body>
+    <div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Clientes</a><ul>
+                    <li><a href="registerClient.html">Registrar</a></li>
+                    <li><a href="listClient.html">Actualizar</a></li>
+                    <li><a href="deleteClient.html">Borrar</a></li>
+                    <li><a href="listar_clientes.html">Listar</a></li>
+                </ul></li>
+                <li><a href="">Mensaje</a><ul>
+                    <li><a href="registerMessage.html">Registrar</a></li>
+                    <li><a href="listMessage.html">Actualizar</a></li>
+                    <li><a href="deleteMessage.html">Borrar</a></li>
+                    <li><a href="listar_message.html">Listar</a></li>
+                </ul></li>
+                <li><a href="">Games</a><ul>
+                    <li><a href="registerGame.html">Registrar</a></li>
+                    <li><a href="listGame.html">Actualizar</a></li>
+                    <li><a href="deleteGame.html">Borrar</a></li>
+                    <li><a href="listar_games.html">Listar</a></li>
+                </ul></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Registrar Juego</h1>
+    <form action="">
+        <h3>ID:</h3><input type="number" id="id">
+        <h3>Developer:</h3><input type="text" id="developer">
+        <h3>Minage:</h3><input type="number" id="minage">
+        <h3>Category ID:</h3><input type="number" id="category_id">
+        <h3>Name:</h3><input type="text" id="name">
+        <br><br>
+        <button onclick="registerGame()" name="btnPost">Registrar</button>
+    </form>
+</body>
+</html>

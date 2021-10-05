@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Mensajes</title>
+    <link href="css/estilos.css" rel="stylesheet">
+	<!-- MetisMenu CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/funciones.js"></script>
+</head>
+<body onload="listarMessage()">
+    <div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Clientes</a><ul>
+                    <li><a href="registerClient.html">Registrar</a></li>
+                    <li><a href="listClient.html">Actualizar</a></li>
+                    <li><a href="deleteClient.html">Borrar</a></li>
+                    <li><a href="listar_clientes.html">Listar</a></li>
+                </ul></li>
+                <li><a href="">Mensaje</a><ul>
+                    <li><a href="registerMessage.html">Registrar</a></li>
+                    <li><a href="listMessage.html">Actualizar</a></li>
+                    <li><a href="deleteMessage.html">Borrar</a></li>
+                    <li><a href="listar_message.html">Listar</a></li>
+                </ul></li>
+                <li><a href="">Games</a><ul>
+                    <li><a href="registerGame.html">Registrar</a></li>
+                    <li><a href="listGame.html">Actualizar</a></li>
+                    <li><a href="deleteGame.html">Borrar</a></li>
+                    <li><a href="listar_games.html">Listar</a></li>
+                </ul></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Listado de Mensajes</h1>
+    <div class="tabla1" id="actualiza0">
+        <table border="1" width=50% class="tabla1" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Message Text</th>
+                </tr>
+            </thead>
+            <tbody id="tabla3">
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
