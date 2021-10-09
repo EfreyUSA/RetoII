@@ -1,4 +1,5 @@
 *{
+    background-color: rgb(235, 232, 232);
     box-sizing:border-box;
     margin:0;
     padding:0;
@@ -9,15 +10,30 @@ h1
 {
     text-align: center;
     color: blue;
+    font-size: 42px;
+}
+
+h2
+{
+    text-align: center;
 }
 
 .tabla1
 {
     margin: auto;
-    color:grey;
+    color:rgb(17, 62, 185);
     align-content: center;
     text-align:center;
 }
+
+.tabla2
+{
+    margin: auto;
+    color:rgb(17, 62, 185);
+    align-content: center;
+    text-align:center;
+}
+
 
 nav a
 {
@@ -29,20 +45,21 @@ nav a
 nav li
 {
     display:inline-block;
-    width:150px;
-    height:30px;
-    padding:5px 10px;
-    background-color:#000;
-    border:1px solid #000;
-    text-align:center;
-    color:#fff;
     position:relative;
+    width:130px;
+    height:30px;
+    background-color:rgb(224, 224, 224);
+    border:1px solid rgb(23, 2, 141);
+    font-size: 20px;
+    text-align:center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color:rgb(3, 2, 82);
 }
             
 nav li:hover
 {
-    background-color:#fff;
-    color:#000;
+    color:rgb(4, 21, 248);
 }
             
 nav li>ul
@@ -61,7 +78,13 @@ nav li:hover>ul
 form{
 	width:400px;
 	padding:16px;
-	border-radius:10px;
+	border-style: solid;
+    border-radius:14px;
+    border-color: rgb(18, 18, 124);
 	margin:auto;
-	background-color:#ccc;
+	background-color:rgb(235, 232, 232);
+}
+
+p{
+    text-align: center;
 }

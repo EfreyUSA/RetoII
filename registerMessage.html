@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Mensajes</title>
+    <title>Registrar Mensaje</title>
     <link href="css/estilos.css" rel="stylesheet">
 	<!-- MetisMenu CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,12 +36,13 @@
             </ul>
         </nav>
     </div>
-    <h1>Registro de Mensajes</h1>
+    <h1>Registrar Mensaje</h1>
+    <br>
     <form action="">
         <h3>ID:</h3><input type="number" id="id">
-        <h3>Mensaje:</h3><textarea name="textarea" rows="10" cols="35" id="mensaje">Escribe tu mensaje aqui</textarea>
+        <h3>Mensaje:</h3><textarea name="textarea" rows="10" cols="31" id="mensaje">Escribe tu mensaje aqui</textarea>
         <br><br>
-        <button onclick="registerMessage()" name="btnPost">Registrar</button>
+        <button onclick="registerMessage()" id="create">Registrar</button>
     </form>
 </body>
 </html>

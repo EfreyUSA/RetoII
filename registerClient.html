@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Clientes</title>
+    <title>Registrar Cliente</title>
     <link href="css/estilos.css" rel="stylesheet">
 	<!-- MetisMenu CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,14 +36,15 @@
             </ul>
         </nav>
     </div>
-    <h1>Registro de Clientes</h1>
+    <h1>Registrar Cliente</h1>
+    <br>
     <form action="">
         <h3>ID:</h3><input type="number" id="id">
         <h3>Nombre:</h3><input type="text" id="name">
         <h3>EMail:</h3><input type="email" id="email">
         <h3>Edad:</h3><input type="number" id="age">
         <br><br>
-        <button onclick="registerClient()" name="btnPost">Registrar</button>
+        <button onclick="registerClient()" id="create">Registrar</button>
     </form>
 </body>
 </html>
