@@ -6,19 +6,10 @@ const btnGet=document.getElementById("replace")
 const btnPut=document.getElementById("update")
 const btnDelete=document.getElementById("delete")
 
-/* btnPost.addEventListener("click", (e) => {
+btnPost.addEventListener("click", (e) => {
     e.preventDefault()
     registerClient()
-    registerMessage()
-    registerGame()
 })
-
-btnPut.addEventListener("click", (e) => {
-    e.preventDefault()
-    updateClient()
-    updateMessage()
-    registerGame()
-}) */
 
 function registerClient() {
     var id=Number(document.getElementById("id").value);
@@ -44,6 +35,11 @@ function registerClient() {
     });
 }
 
+btnPost.addEventListener("click", (e) => {
+    e.preventDefault()
+    registerMessage()
+})
+
 function registerMessage(){
     var id=Number(document.getElementById("id").value);
     var messagetext=document.getElementById("mensaje").value;
@@ -65,6 +61,11 @@ function registerMessage(){
         }
     });
 }
+
+btnPost.addEventListener("click", (e) => {
+    e.preventDefault()
+    registerGame()
+})
 
 function registerGame(){
     var id=Number(document.getElementById("id").value);
@@ -100,7 +101,7 @@ function llenar_tabla_clientes(){
         url:url_client,
         complete:function(respuesta){
             respuesta.responseJSON.items.forEach(registro => {
-                tabla_html1=tabla_html1+"<tr><td>"+registro.id+"</td><td>"+registro.name+"</td><td>"+registro.email+"</td><td>"+registro.age+"</td><td><button onclick=\"preloadClient("+registro.id+")\">Actualiza</button></td></tr>";
+                tabla_html1=tabla_html1+"<tr><td>"+registro.id+"</td><td>"+registro.name+"</td><td>"+registro.email+"</td><td>"+registro.age+"</td><td><button onclick=\"preloadClient("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteClient("+registro.id+")\">Borrar</button></td></tr>";
             });
             $('#tabla1').html(tabla_html1);
         }
@@ -125,6 +126,11 @@ function preloadClient(id){
     });
 }
 
+btnPut.addEventListener("click", (e) => {
+    e.preventDefault()
+    updateClient()
+})
+
 function updateClient(){
     var id=Number(document.getElementById("id").value);
     var name=document.getElementById("name").value;
@@ -146,7 +152,7 @@ function updateClient(){
     llenar_tabla_clientes();
 }
 
-function llenar_tabla_mensajes(){
+function llenar_tabla_message(){
     document.getElementById("actualiza7").style.display='none';
     var tabla_html2="";
 
@@ -155,7 +161,7 @@ function llenar_tabla_mensajes(){
         url:url_message,
         complete:function(respuesta){
             respuesta.responseJSON.items.forEach(registro => {
-                tabla_html2=tabla_html2+"<tr><td>"+registro.id+"</td><td>"+registro.messagetext+"</td><td><button onclick=\"preloadMessage("+registro.id+")\">Actualiza</button></td></tr>";
+                tabla_html2=tabla_html2+"<tr><td>"+registro.id+"</td><td>"+registro.messagetext+"</td><td><button onclick=\"preloadMessage("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteClient("+registro.id+")\">Borrar</button></td></tr>";
             });
             $('#tabla2').html(tabla_html2);
         }
@@ -177,6 +183,11 @@ function preloadMessage(id){
         }
     });
 }
+
+btnPut.addEventListener("click", (e) => {
+    e.preventDefault()
+    updateMessage()
+})
 
 function updateMessage(){
     var id=Number(document.getElementById("id").value);
@@ -205,7 +216,7 @@ function llenar_tabla_games(){
         url:url_games,
         complete:function(respuesta){
             respuesta.responseJSON.items.forEach(registro => {
-                tabla_html=tabla_html+"<tr><td>"+registro.id+"</td><td>"+registro.developer+"</td><td>"+registro.minage+"</td><td>"+registro.category_id+"</td><td>"+registro.name+"</td><td><button onclick=\"precargue_juego("+registro.id+")\">Actualiza</button></td></tr>";
+                tabla_html=tabla_html+"<tr><td>"+registro.id+"</td><td>"+registro.developer+"</td><td>"+registro.minage+"</td><td>"+registro.category_id+"</td><td>"+registro.name+"</td><td><button onclick=\"precargue_juego("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteClient("+registro.id+")\">Borrar</button></td></tr>";
             });
             $('#tabla1').html(tabla_html);
         }
@@ -231,6 +242,11 @@ function precargue_juego(id){
     });
 }
 
+btnPut.addEventListener("click", (e) => {
+    e.preventDefault()
+    updateGame()
+})
+
 function updateGame(id){
     var id=document.getElementById("id").value;
     var developer=document.getElementById("developer").value;
@@ -249,9 +265,12 @@ function updateGame(id){
     llenar_tabla_games();
 }
 
-function deleteClient() {
-    var id=Number(document.getElementById("id").value);
+btnDelete.addEventListener("click", (e) => {
+    e.preventDefault()
+    deleteClient()
+})
 
+function deleteClient(id) {
     const data = {id:id}
     let datasend = JSON.stringify(data)
 
@@ -267,11 +286,15 @@ function deleteClient() {
         error: function (error) {
         }
     });
+    llenar_tabla_clientes()
 }
 
-function deleteMessage() {
-    var id=document.getElementById("id").value;
+btnDelete.addEventListener("click", (e) => {
+    e.preventDefault()
+    deleteMessage()
+})
 
+function deleteMessage(id) {
     const data = {id:id}
     let datasend = JSON.stringify(data)
 
@@ -287,11 +310,15 @@ function deleteMessage() {
         error: function (error) {
         }
     });
+    llenar_tabla_message()
 }
 
-function deleteGame() {
-    var id=document.getElementById("id").value;
-    
+btnGame.addEventListener("click", (e) => {
+    e.preventDefault()
+    deleteGame()
+})
+
+function deleteGame(id) {
     const data = {id:id}
     let datasend = JSON.stringify(data)
 
@@ -307,6 +334,7 @@ function deleteGame() {
         error: function (error) {
         }
     });
+    llenar_tabla_games();
 }
 
 function listarClientes(){
@@ -350,3 +378,5 @@ function listarGames(){
         }
     });
 }
+
+
