@@ -109,7 +109,7 @@ function llenar_tabla_clientes(){
 }
 
 function preloadClient(id){
-    document.getElementById("actualiza3").style.display='none';
+    /* document.getElementById("actualiza3").style.display='none'; */
     document.getElementById("actualiza4").style.display='block';
     var url_client2=url_client+"/"+id
     $.ajax({
@@ -169,7 +169,7 @@ function llenar_tabla_message(){
 }
 
 function preloadMessage(id){
-    document.getElementById("actualiza6").style.display='none';
+    /* document.getElementById("actualiza6").style.display='none'; */
     document.getElementById("actualiza7").style.display='block';
     var url_message2=url_message+"/"+id
     $.ajax({
@@ -210,21 +210,21 @@ function updateMessage(){
 
 function llenar_tabla_games(){
     document.getElementById("actualiza1").style.display='none';
-    var tabla_html="";
+    var tabla_html3="";
     $.ajax({
         method:"GET",
         url:url_games,
         complete:function(respuesta){
             respuesta.responseJSON.items.forEach(registro => {
-                tabla_html=tabla_html+"<tr><td>"+registro.id+"</td><td>"+registro.developer+"</td><td>"+registro.minage+"</td><td>"+registro.category_id+"</td><td>"+registro.name+"</td><td><button onclick=\"preloadGame("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteGame("+registro.id+")\">Borrar</button></td></tr>";
+                tabla_html3=tabla_html3+"<tr><td>"+registro.id+"</td><td>"+registro.developer+"</td><td>"+registro.minage+"</td><td>"+registro.category_id+"</td><td>"+registro.name+"</td><td><button onclick=\"preloadGame("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteGame("+registro.id+")\">Borrar</button></td></tr>";
             });
-            $('#tabla1').html(tabla_html);
+            $('#tabla1').html(tabla_html3);
         }
     });
 }
 
 function preloadGame(id){
-    document.getElementById("actualiza0").style.display='none';
+    /* document.getElementById("actualiza0").style.display='none';*/
     document.getElementById("actualiza1").style.display='block';
     var url_games2=url_games+"/"+id
     $.ajax({
