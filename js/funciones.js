@@ -74,7 +74,7 @@ function registerGame(){
     var category_id=Number(document.getElementById("category_id").value);
     var name=document.getElementById("name").value;
     
-    const data={"id": id,"developer": developer,"minage": minage,"category_id":category_id,"name":name}
+    const data={"id": id,"developer": developer,"minage": minage,"category_id": category_id,"name": name}
     let datasend=JSON.stringify(data)
 
     $.ajax({
@@ -161,7 +161,7 @@ function llenar_tabla_message(){
         url:url_message,
         complete:function(respuesta){
             respuesta.responseJSON.items.forEach(registro => {
-                tabla_html2=tabla_html2+"<tr><td>"+registro.id+"</td><td>"+registro.messagetext+"</td><td><button onclick=\"preloadMessage("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteClient("+registro.id+")\">Borrar</button></td></tr>";
+                tabla_html2=tabla_html2+"<tr><td>"+registro.id+"</td><td>"+registro.messagetext+"</td><td><button onclick=\"preloadMessage("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteMessage("+registro.id+")\">Borrar</button></td></tr>";
             });
             $('#tabla2').html(tabla_html2);
         }
@@ -216,14 +216,14 @@ function llenar_tabla_games(){
         url:url_games,
         complete:function(respuesta){
             respuesta.responseJSON.items.forEach(registro => {
-                tabla_html=tabla_html+"<tr><td>"+registro.id+"</td><td>"+registro.developer+"</td><td>"+registro.minage+"</td><td>"+registro.category_id+"</td><td>"+registro.name+"</td><td><button onclick=\"precargue_juego("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteClient("+registro.id+")\">Borrar</button></td></tr>";
+                tabla_html=tabla_html+"<tr><td>"+registro.id+"</td><td>"+registro.developer+"</td><td>"+registro.minage+"</td><td>"+registro.category_id+"</td><td>"+registro.name+"</td><td><button onclick=\"preloadGame("+registro.id+")\">Actualiza</button></td><td><button onclick=\"deleteGame("+registro.id+")\">Borrar</button></td></tr>";
             });
             $('#tabla1').html(tabla_html);
         }
     });
 }
 
-function precargue_juego(id){
+function preloadGame(id){
     document.getElementById("actualiza0").style.display='none';
     document.getElementById("actualiza1").style.display='block';
     var url_games2=url_games+"/"+id
