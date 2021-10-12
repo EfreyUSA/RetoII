@@ -17,12 +17,12 @@ function registerClient() {
     var email=document.getElementById("email").value;
     var age=Number(document.getElementById("age").value);
 
-    const data = {"id":id,"name":name,"email":email,"age":age}
+    const data = {"id": id,"name": name,"email": email,"age": age}
     let datasend = JSON.stringify(data)
 
     $.ajax({
-        method:"POST",
         url:url_client,
+        method:"POST",
         data:datasend,
         dataType:'json',
         contentType:"application/json",
@@ -44,12 +44,12 @@ function registerMessage(){
     var id=Number(document.getElementById("id").value);
     var messagetext=document.getElementById("mensaje").value;
 
-    const data = {"id":id,"messagetext":messagetext}
+    const data = {"id": id,"messagetext": messagetext}
     let datasend = JSON.stringify(data)
 
     $.ajax({
-        method:"POST",
         url:url_message,
+        method:"POST",
         data:datasend,
         dataType:'json',
         contentType:"application/json",
@@ -74,12 +74,12 @@ function registerGame(){
     var category_id=Number(document.getElementById("category_id").value);
     var name=document.getElementById("name").value;
     
-    const data={"id":id,"developer":developer,"minage":minage,"category_id":category_id,"name":name}
+    const data={"id": id,"developer": developer,"minage": minage,"category_id":category_id,"name":name}
     let datasend=JSON.stringify(data)
 
     $.ajax({
-        method:"POST",
         url:url_games,
+        method:"POST",
         data:datasend,
         dataType:'json',
         contentType:"application/json",
